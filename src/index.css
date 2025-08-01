@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  color: hsl(248, 70%, 10%);
+  background-color: #edf2fa;
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+.app {
+  display: flex;
+  justify-self: center;
+  width: 50em;
+  margin-top: 14em;
+  margin-right: 18em;
+}
+
+section {
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 8rem;
+  border-radius: 7px;
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 1em;
+}
+
+.avater-card {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  margin-bottom: 2em;
+}
+
+.avater-card img {
+  border: 1px solid gray;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.avater-business {
+  font-size: 1.5em;
+  font-weight: normal;
+}
+
+.avater-card p {
+  font-weight: 900;
+  font-size: 1.5em;
+}
+
+.sign-input {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin-bottom: 2em;
+}
+
+.sign-input label {
+  font-size: 2em;
+}
+
+.sign-input input {
+  border: 2px solid hsl(248, 70%, 10%);
+  outline: none;
+  padding: 1em;
+  width: 30em;
+  border-radius: 7px;
+}
+
+.sign-input div {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  font-size: 3em;
+  cursor: pointer;
+}
+
+.sign-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 39.5em;
+}
+
+.sign-toggle div {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.toggle-icon {
+  font-size: 3em;
+  cursor: pointer;
+}
+
+.sign-toggle button {
+  background-color: hsl(248, 70%, 10%);
+  color: white;
+  padding: 1em 2em;
+  border: none;
+  border-radius: 4px;
+  margin-top: 1em;
+  cursor: pointer;
+}
+
+.reset-btn {
+  font-size: 1.5em;
+  border: none;
+  border-bottom-style: solid;
+  cursor: pointer;
+  margin-top: 1em;
+  background-color: inherit;
+}
