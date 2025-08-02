@@ -14,26 +14,26 @@ body {
   color: hsl(248, 70%, 10%);
   background-color: #edf2fa;
   height: 100vh;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 .app {
   display: flex;
   justify-self: center;
   width: 50em;
-  margin-top: 14em;
-  margin-right: 18em;
+  margin-top: 20em;
+  margin-left: auto;
 }
 
 section {
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  padding: 8rem;
+  padding: 2em;
   border-radius: 7px;
 }
 
 h1 {
-  font-size: 3em;
+  font-size: 2em;
   margin-bottom: 1em;
 }
 
@@ -76,8 +76,10 @@ h1 {
   border: 2px solid hsl(248, 70%, 10%);
   outline: none;
   padding: 1em;
-  width: 30em;
+  width: 18em;
   border-radius: 7px;
+  text-indent: 1.5em;
+  /* font-size: 0.6em; */
 }
 
 .sign-input div {
@@ -88,11 +90,19 @@ h1 {
   cursor: pointer;
 }
 
+.input-container {
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  left: 0.1em;
+}
+
 .sign-toggle {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  width: 39.5em;
+  width: 23.5em;
 }
 
 .sign-toggle div {
@@ -109,7 +119,7 @@ h1 {
 .sign-toggle button {
   background-color: hsl(248, 70%, 10%);
   color: white;
-  padding: 1em 2em;
+  padding: 1em;
   border: none;
   border-radius: 4px;
   margin-top: 1em;
@@ -123,4 +133,41 @@ h1 {
   cursor: pointer;
   margin-top: 1em;
   background-color: inherit;
+}
+
+.reset-btn-p {
+  font-size: 1em;
+  margin-top: 1em;
+}
+
+@media only screen and (min-width: 576px) {
+  .app {
+    margin-top: 10em;
+    margin-left: -50em;
+    width: 20em;
+  }
+  h1 {
+    font-size: 3em;
+  }
+  section {
+    padding: 10rem;
+  }
+
+  .sign-input input {
+    font-size: 0.6em;
+    width: 25em;
+  }
+
+  .sign-toggle button {
+    padding: 1em 2em;
+  }
+
+  .sign-toggle {
+    width: 45em;
+  }
+
+  .reset-btn-p {
+  font-size: 2em;
+  margin-top: 2em;
+}
 }

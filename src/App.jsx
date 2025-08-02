@@ -2,6 +2,8 @@ import { useState } from "react";
 import { FaRegEyeSlash } from "react-icons/fa";
 import { FaToggleOff } from "react-icons/fa6";
 import { IoEyeOutline } from "react-icons/io5";
+import { getRandomPassword, randomPasswords } from "./costants/datat";
+import { CiLock } from "react-icons/ci";
 
 export default function App() {
   const [userPassword, setUserPassword] = useState("");
@@ -9,6 +11,12 @@ export default function App() {
 
   const handleViewPassword = () => {
     setViewPassword(!viewPassword);
+  };
+
+  const handleConfirm = () => {
+    if (!userPassword) return;
+    window.alert("Successfully Confirmed ✔");
+    setUserPassword("");
   };
 
   return (
@@ -22,7 +30,7 @@ export default function App() {
           handleViewPassword={handleViewPassword}
           viewPassword={viewPassword}
         />
-        <Toggle />
+        <Toggle handleConfirm={handleConfirm} />
         <Resetpassword setUserPassword={setUserPassword} />
       </section>
     </div>
@@ -54,22 +62,26 @@ function Input({
   return (
     <div className="sign-input">
       <label htmlFor="">Password</label>
-      <div>
+      <div className="input-container">
+        <CiLock className="input-icon" />
         <input
+          title="Password must be at least 8 characters"
+          maxLength={8}
+          minLength={8}
           type={viewPassword ? "text" : "password"}
-          placeholder="🔒 ****"
+          placeholder="***"
           value={userPassword}
           onChange={(e) => setUserPassword(e.target.value)}
         />
         <span onClick={handleViewPassword}>
-          {viewPassword ? <IoEyeOutline />  : <FaRegEyeSlash />}
+          {viewPassword ? <IoEyeOutline /> : <FaRegEyeSlash />}
         </span>
       </div>
     </div>
   );
 }
 
-function Toggle() {
+function Toggle({ handleConfirm }) {
   return (
     <div className="sign-toggle">
       <div>
@@ -78,15 +90,23 @@ function Toggle() {
         </span>
         <span>Stay signed in</span>
       </div>
-      <button>Confirm</button>
+      <button onClick={handleConfirm}>Confirm</button>
     </div>
   );
 }
 
 function Resetpassword({ setUserPassword }) {
   return (
-    <button className="reset-btn" onClick={() => setUserPassword("qwerty911??!!")}>
-      Reset password
-    </button>
+    <div>
+      <button
+        className="reset-btn"
+        onClick={() => setUserPassword(getRandomPassword(randomPasswords))}
+      >
+        Manage passwords
+      </button>
+      <p className="reset-btn-p">
+        You can use saved passwords on any device. They're saved by us for you✔.
+      </p>
+    </div>
   );
 }
